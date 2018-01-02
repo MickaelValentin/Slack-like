@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    .container
+        .row
+            .col-md-4
+            .col-md-4
+                form(action="/auth/signup", method="POST", style="text-align: center;")
+                    input(type='text', name='username' class='form-control', placeholder='Username',required, autofocus)
+                    input(type='password', name='password' class='form-control', placeholder='Password', required)
+                    input(type='email', name='email' class='form-control', placeholder='Email', required)
+                    button(class='btn btn-lg btn-primary btn-block', type='submit') Sign up
+                a(href='/auth/login') I already have an account
+            .col-md-4

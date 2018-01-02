@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    .container
+        .row 
+            .col-md-4
+            .col-md-4
+                .panel.panel-default  
+                    .panel-heading
+                        form.form-horizontal(action="/new", method="POST", style="text-align: center;")
+                            .form-group
+                                .label.col-md-2(for="message")
+                                .input-group
+                                    input#message(name="content", type="text", placeholder="New Message")
+                                    input.btn.btn-default(type="submit", value="Valider")
+                    .panel-body
+                        ul#messagesList
+                            if messages.length > 0
+                                each message in messages 
+                                    li
+                                        |   #{message.user.username} : #{message.content}
+                                        if message.user._id == user_id
+                                        a(href='/delete/#{message._id}')
+                                            | X
+                            else
+                                li Pas de messages dans ce chat ! :(
+            .col-md-4

@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+   .container
+        .row 
+            .col-md-4
+            .col-md-4
+                a(href="/create", style="text-align: center;" ) Create a channel
+                br
+                br
+                a(href="/profil/#{id}", style="text-align: center;") My profile
+                br
+                br
+                a(href="/auth/logout") Logout
+                br
+                br
+                ul
+                    each channel in channels
+                        li
+                            a(href="/permalink/#{channel.permalink}", style="text-align: center;") #{channel.name}
+                            a(href="/deletechannel/#{channel._id}", style="color: red; text-align: center;") X
+            .col-md-4

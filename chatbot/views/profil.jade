@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container
+        .row 
+            .col-md-4
+            .col-md-4
+                form(method="POST", action="/profil/:id" style="text-align: center;")
+                    .form-group
+                        label(for="usernameInput") Username
+                        br
+                        input#usernameInput(type="text", placeholder="#{username}", name="username")
+                    .form-group
+                        label(for="emailInput") Email 
+                        br
+                        textarea#emailInput(name="email", placeholder="#{email}")
+                    input(type="submit", value="Update") 
+            .col-md-4

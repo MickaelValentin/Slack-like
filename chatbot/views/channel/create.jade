@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    .container
+        .row 
+            .col-md-4
+            .col-md-4
+                form(method="POST", style="text-align: center;")
+                    .form-group
+                    label(for="nameInput") Name
+                    input#nameInput(type="text", name="name")
+                    input(type="submit", value="Create") 
+            .col-md-4
